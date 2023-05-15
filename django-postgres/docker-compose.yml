@@ -5,9 +5,7 @@ services:
   db-postgres:
     image: postgres
     restart: unless-stopped
-    container_name: my_project_name-db
-    volumes:
-      - ./compose-data/db:/var/lib/postgresql/data
+    container_name: my_project-db
     environment:
       - POSTGRES_DB=psql-db
       - POSTGRES_USER=psql-user
@@ -15,7 +13,7 @@ services:
 
   django-compose:
     build: .
-    container_name: my_project_name-app
+    container_name: my_project-app
     ports:
       - "8000:8000"
     depends_on:
