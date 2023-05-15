@@ -4,4 +4,4 @@ main:
 
 
 flask-app:
-	cd flask && docker compose up
+	cd flask && docker compose up --build
